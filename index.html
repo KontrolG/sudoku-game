@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Sudoku</title>
+</head>
+
+<body>
+  <header>
+    <img src="img/logo.png" alt="Sudoku">
+  </header>
+  <main>
+    <table class="board card">
+    </table>
+    <section class="options">
+      <div class="form-group">
+        <label class="difficult-label">Difficult</label>
+        <div class="btn-group card">
+          <button class="pressed">Easy</button>
+          <button>Med</button>
+          <button>Hard</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="darkmode-label">Dark Mode</label>
+        <div class="switcher card">
+          <!-- Checkbox hack, checkbox primero para :checked + label -->
+          <label for="darkmode" class="">O</label><input type="radio" name="darkmode" id="darkmode-off">
+          <label for="darkmode-on" class="checked">I</label><input type="radio" name="darkmode" id="darkmode-on">
+        </div>
+      </div>
+      <button class="btn-restart card">Restart</button>
+    </section>
+  </main>
+  <footer class="intructions">
+    <h2>Instrucciones</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda consequuntur
+      eveniet at harum deserunt obcaecati dolore nesciunt nisi doloremque cupiditate!
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+    const board = document.querySelector(".board");
+
+    const createTablefilledWithEmptyCells = (rows, columnsPerRow) => {
+      const table = document.createDocumentFragment();
+      let remainingRows = rows;
+      while (remainingRows) {
+        const row = createNewRow(columnsPerRow);
+        table.appendChild(row);
+        remainingRows--;
+      }
+
+      return table;
+    }
+
+    const createNewRow = (columns) => {
+      const row = document.createElement("tr");
+      for (let index = 0; index < columns; index++) {
+        const cell = document.createElement("td");
+        cell.textContent = index.toString().slice(0, 1);
+        row.appendChild(cell);
+      }
+
+      return row;
+    }
+
+    board.append(createTablefilledWithEmptyCells(12, 12));
+
+  </script>
+</body>
+
+</html>

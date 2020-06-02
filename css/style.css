@@ -1,0 +1,219 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #efeeee;
+  font: 400 18px/1.5 "Century Gothic";
+  color: #373737;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0.5em 0.75em;
+  font: inherit;
+  font-size: 0.85em;
+  color: inherit;
+  box-shadow: -3px -3px 8px 0px #ffffffaa, 3px 3px 8px 0px #d1cdc7aa;
+}
+
+.card {
+  border: 1px solid #ffffff33;
+  border-radius: 6px;
+  box-shadow: -6px -6px 16px 0px #ffffffaa, 6px 6px 16px 0px #d1cdc7aa;
+}
+
+.test,
+.test * {
+  border: 1px solid black;
+}
+
+.options {
+  margin: 40px auto;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-group label {
+  display: block;
+  margin-left: 0.25em;
+}
+
+.form-group label + * {
+  margin-top: 0.25em;
+}
+
+.btn-group {
+  display: flex;
+  box-shadow: -3px -3px 8px 0 #ffffffaa, 3px 3px 8px 0 #d1cdc7aa;
+}
+
+.btn-group button {
+  font-weight: bolder;
+  box-shadow: none;
+  border-right: 1px solid #37373740;
+}
+
+.btn-group button:last-of-type {
+  border-right: none;
+}
+
+.btn-group button::after {
+  display: block;
+  content: "";
+  height: 0.085em;
+  border-radius: 0.5rem;
+  width: 60%;
+  margin: 0.2em auto;
+  color: inherit;
+  background-color: currentColor;
+}
+
+.btn-group button.pressed {
+  box-shadow: inset -4px -4px 8px 0 #ffffffaa, inset 4px 4px 8px 0 #d1cdc7aa;
+  color: #5ab9ea;
+}
+
+.switcher {
+  border-width: 0.5px;
+  background-color: rgb(230, 230, 230);
+  box-shadow: -1.2px -1.2px 3.2px 0px #ffffffaa, 1.2px 1.2px 3.2px 0px #d1cdc7aa,
+    inset 1.2px 1.2px 3.2px 0px rgb(200, 200, 200);
+  display: inline-flex;
+  height: 40px;
+  padding: 2px;
+}
+
+.switcher label {
+  color: #5f5e5caa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  width: 40px;
+}
+
+.switcher input {
+  display: none;
+}
+
+.switcher .checked {
+  color: #555;
+  background-color: #efeeee;
+}
+
+.switcher .checked:first-of-type {
+  box-shadow: 0.6px 0.6px 1.6px 0.3px #d1cdc7aa;
+}
+
+.switcher .checked:last-of-type {
+  box-shadow: -0.6px 0.6px 1.6px 0.3px #d1cdc7aa;
+}
+
+.btn-restart {
+  text-shadow: 1px 1px 1px #aaa;
+  font-weight: 800;
+  font-style: italic;
+}
+
+header {
+  text-align: center;
+}
+header img {
+  margin: -60px 0 -50px;
+  max-width: 700px;
+}
+
+.board {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+  box-shadow: -8px -8px 18px 0px #ffffffaa, 8px 8px 18px 0px #d1cdc7aa;
+}
+
+.board td {
+  border: 1px solid #37373740;
+  text-align: center;
+  font-size: 2em;
+  font-size: 1.5em;
+  font-size: 1em;
+}
+
+.board tr:nth-of-type(odd) td:nth-of-type(even),
+.board tr:nth-of-type(even) td:nth-of-type(odd) {
+  /* background-color: #fff; */
+}
+
+.board tr:first-of-type td {
+  border-top: none;
+}
+
+.board tr:last-of-type td {
+  border-bottom: none;
+}
+
+.board td:first-of-type {
+  border-left: none;
+}
+
+.board td:last-of-type {
+  border-right: none;
+}
+
+.board tr:nth-of-type(1) td:nth-child(1),
+.board tr:nth-of-type(1) td:nth-child(2),
+.board tr:nth-of-type(1) td:nth-child(3),
+.board tr:nth-of-type(1) td:nth-child(7),
+.board tr:nth-of-type(1) td:nth-child(8),
+.board tr:nth-of-type(1) td:nth-child(9),
+.board tr:nth-of-type(2) td:nth-child(1),
+.board tr:nth-of-type(2) td:nth-child(2),
+.board tr:nth-of-type(2) td:nth-child(3),
+.board tr:nth-of-type(2) td:nth-child(7),
+.board tr:nth-of-type(2) td:nth-child(8),
+.board tr:nth-of-type(2) td:nth-child(9),
+.board tr:nth-of-type(3) td:nth-child(1),
+.board tr:nth-of-type(3) td:nth-child(2),
+.board tr:nth-of-type(3) td:nth-child(3),
+.board tr:nth-of-type(3) td:nth-child(7),
+.board tr:nth-of-type(3) td:nth-child(8),
+.board tr:nth-of-type(3) td:nth-child(9) {
+  background-color: #fff;
+}
+
+.board tr:nth-of-type(3) td,
+.board tr:nth-of-type(6) td,
+.board tr:nth-of-type(9) td {
+  /* border-bottom: 1px solid #373737; */
+}
+
+.board td:nth-of-type(3),
+.board td:nth-of-type(6),
+.board td:nth-of-type(9) {
+  /* border-right: 1px solid #373737; */
+}
+
+.intructions {
+  text-align: justify;
+  width: 60%;
+  margin: 0 auto 40px;
+}
+
+.intructions h2 {
+  text-align: center;
+}
