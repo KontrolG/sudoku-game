@@ -20,17 +20,21 @@
       <div class="form-group">
         <label class="difficult-label">Difficult</label>
         <div class="btn-group card">
-          <button class="pressed">Easy</button>
-          <button>Med</button>
-          <button>Hard</button>
+          <input type="radio" name="difficult" id="btn-easy" checked>
+          <label for="btn-easy">Easy</label>
+          <input type="radio" name="difficult" id="btn-med">
+          <label for="btn-med">Med</label>
+          <input type="radio" name="difficult" id="btn-hard">
+          <label for="btn-hard">Hard</label>
         </div>
       </div>
       <div class="form-group">
         <label class="darkmode-label">Dark Mode</label>
         <div class="switcher card">
-          <!-- Checkbox hack, checkbox primero para :checked + label -->
-          <label for="darkmode" class="">O</label><input type="radio" name="darkmode" id="darkmode-off">
-          <label for="darkmode-on" class="checked">I</label><input type="radio" name="darkmode" id="darkmode-on">
+          <input type="radio" name="darkmode" id="darkmode-on" checked>
+          <label for="darkmode-on">I</label>
+          <input type="radio" name="darkmode" id="darkmode-off">
+          <label for="darkmode-off">O</label>
         </div>
       </div>
       <button class="btn-restart card">Restart</button>
